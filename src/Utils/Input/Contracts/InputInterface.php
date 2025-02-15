@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpX\Utils\Input\Contracts\Interfaces;
+namespace PhpX\Utils\Input\Contracts;
 
 
 interface InputInterface {

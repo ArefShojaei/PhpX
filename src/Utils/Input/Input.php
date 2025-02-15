@@ -2,7 +2,7 @@
 
 namespace PhpX\Utils\Input;
 
-use PhpX\Utils\Input\Contracts\Interfaces\InputInterface;
+use PhpX\Utils\Input\Contracts\InputInterface;
 
 
 final class Input implements InputInterface {
