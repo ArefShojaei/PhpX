@@ -7,11 +7,16 @@ use PhpX\Components\{
     Console\Contracts\AppInterface,
     Routing\Router
 };
-use PhpX\Utils\Input\Input;
+use PhpX\Utils\{
+    Console\Console,
+    Input\Input
+};
 
 
 final class App implements AppInterface {
     use Router;
+
+    const COMMAND_PARAMS_COUNT = 1; 
 
     private $providers = [];
     
@@ -29,12 +34,14 @@ final class App implements AppInterface {
     public function launch(): void {
         $input = Input::get();
 
-        $commandHandler = $this->findCommand($input);
+        [$params, $action] = $this->findCommand($input);
 
-        foreach ($this->providers as $provider) {
-            $provider();
-        }
+        if (!$this->isMatchedCommand($params)) die(Console::error("The command is not valid!"));
 
-        $this->executeCommand($commandHandler);
+        if (count($params) > self::COMMAND_PARAMS_COUNT) $this->addCommandParams($params);
+
+        $this->applyProviders();
+
+        $this->executeCommand($action);
     }
 }
