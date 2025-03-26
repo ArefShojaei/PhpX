@@ -2,29 +2,46 @@
 
 namespace PhpX\Utils\Console;
 
-use PhpX\Utils\Console\Contracts\ConsoleInterface;
-use PhpX\Utils\Console\Contracts\ConsoleLabel as Label;
+use PhpX\Utils\Console\Contracts\{
+    ConsoleInterface,
+    ConsoleLabel as Label,
+    ConsoleColor as Color
+};
 
 
+final class Console implements ConsoleInterface {
+    private static function make(string $color, string $content): string {
+        return Color::ALIAS . Color::SYMBOL . $color . $content . Color::ALIAS . Color::SYMBOL . Color::RESET;
+    }
 
-class Console implements ConsoleInterface {
-    private static function print($level, string $message): string {
-        return "[{$level}] {$message}";
+    private static function print(string $level, string $message): string {
+        return "{$level} {$message}";
     }
 
     public static function log(string $message): string {
-        return self::print(Label::LOG, $message);
+        $level = "[" . Label::LOG . "]";
+
+        return self::print($level, $message);
     }
 
     public static function info(string $message): string {
-        return self::print(Label::INFO, $message);
+        $level = self::make(Color::BG_BLUE, "[" . Label::INFO . "]");
+        $message = self::make(Color::TEXT_BLUE, $message);
+
+        return self::print($level, $message);
     }
 
     public static function warn(string $message): string {
-        return self::print(Label::WARN, $message);
+        $level = self::make(Color::BG_YELLOW, "[" . Label::WARN . "]");
+        $message = self::make(Color::TEXT_YELLOW, $message);
+
+        return self::print($level, $message);
     }
 
     public static function error(string $message): string {
-        return self::print(Label::ERROR, $message);
+        $level = self::make(Color::BG_RED, "[" . Label::ERROR . "]");
+        $message = self::make(Color::TEXT_RED, $message);
+
+        return self::print($level, $message);
     }
 }
