@@ -31,6 +31,10 @@ final class App implements AppInterface {
 
         $commandHandler = $this->findCommand($input);
 
+        foreach ($this->providers as $provider) {
+            $provider();
+        }
+
         $this->executeCommand($commandHandler);
     }
 }
