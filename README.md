@@ -1,8 +1,9 @@
 <h1 align='center'>PhpX Library</h1>
 
 ```php
-use PhpX\Components\Console\App;
+<?php
 
+use PhpX\Components\Console\App;
 
 $app = new App;
 
