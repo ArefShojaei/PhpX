@@ -5,7 +5,7 @@ namespace PhpX\Components\View;
 use PhpX\Components\View\Contracts\ViewInterface;
 
 
-class View implements ViewInterface {
+final class View implements ViewInterface {
     private ViewBuilder $builder;
 
     public function __construct(ViewBuilder $builder) {

@@ -5,7 +5,7 @@ namespace PhpX\Components\View;
 use PhpX\Components\View\Contracts\ViewBuilderInterface;
 
 
-class ViewBuilder implements ViewBuilderInterface {
+final class ViewBuilder implements ViewBuilderInterface {
     private const CONVERABLE_TABLE_LENGTH = 1;
     
     private const EMPTY_CONTENT = "";
