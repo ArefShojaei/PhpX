@@ -3,6 +3,7 @@
 namespace PhpX\Components\Routing;
 
 use Closure;
+use PhpX\Components\Console\Provider;
 
 
 trait Router {
@@ -33,7 +34,15 @@ trait Router {
 
     private function applyProviders(): void {
         foreach ($this->providers as $provider) {
-            call_user_func($provider);
+            if ($provider instanceof Closure) {
+                $provider();
+            }
+
+            if ($provider instanceof  Provider) {
+                $providerInstance = new $provider;
+
+                $providerInstance->handle();
+            }
         }
     }
 

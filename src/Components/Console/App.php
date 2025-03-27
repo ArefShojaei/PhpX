@@ -27,7 +27,7 @@ final class App implements AppInterface {
         Input::set($argv);
     }
 
-    public function use(Closure $callback): void {
+    public function use(Closure|Provider $callback): void {
         $this->providers[] = $callback;
     }
 
