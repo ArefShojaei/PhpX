@@ -16,5 +16,6 @@ trait Route {
         $callback($this);
 
         $this->commandPrefix = "";
+        $this->commandParams = [];
     }
 }
