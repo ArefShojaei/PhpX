@@ -3,10 +3,11 @@
 namespace PhpX\Components\Routing;
 
 use Closure;
+use PhpX\Components\Console\Command;
 
 
 trait Route {
-    public function command(string $command, Closure $callback): void {
+    public function command(string $command, Closure|Command $callback): void {
         $this->addCommand($command, $callback);
     }
 

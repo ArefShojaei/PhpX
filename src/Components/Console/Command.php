@@ -6,5 +6,5 @@ use PhpX\Components\Console\Contracts\CommandInterface;
 
 
 abstract class Command implements CommandInterface {
-    abstract public function exec(array $params = []): string; 
+    abstract public function exec(array $params): string;
 }

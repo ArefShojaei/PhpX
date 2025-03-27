@@ -3,7 +3,10 @@
 namespace PhpX\Components\Routing;
 
 use Closure;
-use PhpX\Components\Console\Provider;
+use PhpX\Components\Console\{
+    Provider,
+    Command
+};
 
 
 trait Router {
@@ -16,7 +19,7 @@ trait Router {
     private array $CommandParams = [];
 
 
-    private function addCommand(string $command, Closure $callback): void {
+    private function addCommand(string $command, Closure|Command $callback): void {
         $this->commands[trim($this->commandPrefix . $command)] = $callback;
     }
 
@@ -58,7 +61,15 @@ trait Router {
         return [$matches, $action];
     }
     
-    private function executeCommand(callable $callback): void {
-        echo call_user_func($callback, ...$this->CommandParams);
+    private function executeCommand(Closure|Command $callback): void {
+        if ($callback instanceof Command) {
+            $commandInstance = new $callback;
+
+            echo $commandInstance->exec($this->CommandParams);
+        }
+        
+        if ($callback instanceof Closure) {
+            echo call_user_func($callback, ...$this->CommandParams);
+        }
     }
 }
