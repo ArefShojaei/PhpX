@@ -2,6 +2,15 @@
     "name": "arefshojaei/php-x",
     "description": "PHP Console application",
     "license": "MIT",
+    "keywords": [
+        "php",
+        "console",
+        "cli",
+        "cmd",
+        "command"
+    ],
+    "version": "1.16.4",
+    "type": "project",
     "autoload": {
         "psr-4": {
             "PhpX\\": "src/"
@@ -21,5 +30,8 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "^10"
+    },
+    "require": {
+        "php" : "^8.0"
     }
 }
