@@ -3,8 +3,8 @@
 namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
-use PhpX\Components\View\Contracts\ViewBuilderInterface;
-use PhpX\Components\View\ViewBuilder;
+use PhpX\Utils\View\Contracts\ViewBuilderInterface;
+use PhpX\Utils\View\ViewBuilder;
 use function Tests\isImplementsInterface;
 
 
