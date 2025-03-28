@@ -1,7 +1,3 @@
-<div align="center">
-    <img src="https://www.freeiconspng.com/thumbs/command-line-icon/command-line-icon-1.png" width="400px" height="400px" />
-</div>
-
 <h1 align='center'>PHP Console App</h1>
 
 ```php
