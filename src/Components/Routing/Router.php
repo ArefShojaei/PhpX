@@ -51,7 +51,7 @@ trait Router {
 
     private function findCommand(string $command): array {
         foreach ($this->commands as $cmd => $action) {
-            $pattern = "/^" . str_replace(["{", "}"], ["(?<", ">(\w)+)"], $cmd) . "$/";
+            $pattern = "/^" . str_replace(["{", "}"], ["(?<", ">[\w\/:.-_]+)"], $cmd) . "$/";
 
             preg_match($pattern, $command, $matches);
 
