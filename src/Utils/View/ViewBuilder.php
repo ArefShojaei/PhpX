@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpX\Components\View;
+namespace PhpX\Utils\View;
 
-use PhpX\Components\View\Contracts\ViewBuilderInterface;
+use PhpX\Utils\View\Contracts\ViewBuilderInterface;
 
 
 final class ViewBuilder implements ViewBuilderInterface {

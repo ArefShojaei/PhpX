@@ -1,8 +1,8 @@
 <?php
 
-namespace PhpX\Components\View;
+namespace PhpX\Utils\View;
 
-use PhpX\Components\View\Contracts\ViewInterface;
+use PhpX\Utils\View\Contracts\ViewInterface;
 
 
 final class View implements ViewInterface {

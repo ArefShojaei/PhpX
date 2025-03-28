@@ -1,6 +1,6 @@
 <?php
 
-namespace PhpX\Components\View\Contracts;
+namespace PhpX\Utils\View\Contracts;
 
 
 interface ViewBuilderInterface {
