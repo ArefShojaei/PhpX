@@ -1,10 +1,11 @@
 <?php
 
-namespace PhpX\Tests\Unit;
+namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use PhpX\Utils\Console\Console;
 use PhpX\Utils\Console\Contracts\ConsoleInterface;
+use function Tests\isImplementsInterface;
 
 
 final class ConsoleTest extends TestCase {
@@ -60,10 +61,9 @@ final class ConsoleTest extends TestCase {
      * @test
      */
     public function checkToImplementConsoleInterface() {
-        $interfaces = class_implements(Console::class);
-
-        $result = $interfaces[ConsoleInterface::class] ? true : false;
+        $result = isImplementsInterface(Console::class, ConsoleInterface::class);
 
         $this->assertIsBool($result);
+        $this->assertTrue($result);
     }
 }

@@ -1,10 +1,11 @@
 <?php
 
-namespace PhpX\Tests\Unit;
+namespace Tests\Unit;
 
 use PHPUnit\Framework\TestCase;
 use PhpX\Utils\Input\Contracts\InputInterface;
 use PhpX\Utils\Input\Input;
+use function Tests\isImplementsInterface;
 
 
 final class InputTest extends TestCase {
@@ -42,10 +43,9 @@ final class InputTest extends TestCase {
      * @test
      */
     public function checkToImplementInputInterface() {
-        $interfaces = class_implements(Input::class);
-
-        $result = $interfaces[InputInterface::class] ? true : false;
+        $result = isImplementsInterface(Input::class, InputInterface::class);
 
         $this->assertIsBool($result);
+        $this->assertTrue($result);
     }
 }
