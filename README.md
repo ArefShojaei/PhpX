@@ -82,6 +82,7 @@ use PhpX\Utils\Console\Console;
 
 echo Console::log("My message") . PHP_EOL; # [LOG] My message
 echo Console::info("My message") . PHP_EOL; # [INFO] My message
+echo Console::success("My message") . PHP_EOL; # [SUCCESS] My message
 echo Console::warn("My message") . PHP_EOL; # [WARN] My message
 echo Console::error("My message") . PHP_EOL; # [ERROR] My message
 ```
