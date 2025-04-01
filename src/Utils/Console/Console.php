@@ -18,28 +18,35 @@ final class Console implements ConsoleInterface {
         return "{$level} {$message}";
     }
 
-    public static function log(string $message): string {
-        $level = "[" . Label::LOG . "]";
+    public static function log(string $message, string $label = null): string {
+        $level = "[" . ($label ? $label : Label::WARN) . "]";
 
         return self::print($level, $message);
     }
 
-    public static function info(string $message): string {
-        $level = self::make(Color::BG_BLUE, "[" . Label::INFO . "]");
+    public static function info(string $message, string $label = null): string {
+        $level = self::make(Color::BG_BLUE, "[" . ($label ? $label : Label::WARN) . "]");
         $message = self::make(Color::TEXT_BLUE, $message);
 
         return self::print($level, $message);
     }
 
-    public static function warn(string $message): string {
-        $level = self::make(Color::BG_YELLOW, "[" . Label::WARN . "]");
+    public static function success(string $message, string $label = null): string {
+        $level = self::make(Color::BG_GREEN, "[" . ($label ? $label : Label::SUCCESS) . "]");
+        $message = self::make(Color::TEXT_GREEN, $message);
+
+        return self::print($level, $message);
+    }
+
+    public static function warn(string $message, string $label = null): string {
+        $level = self::make(Color::BG_YELLOW, "[" . ($label ? $label : Label::WARN) . "]");
         $message = self::make(Color::TEXT_YELLOW, $message);
 
         return self::print($level, $message);
     }
 
-    public static function error(string $message): string {
-        $level = self::make(Color::BG_RED, "[" . Label::ERROR . "]");
+    public static function error(string $message, string $label = null): string {
+        $level = self::make(Color::BG_RED, "[" . ($label ? $label : Label::WARN) . "]");
         $message = self::make(Color::TEXT_RED, $message);
 
         return self::print($level, $message);
