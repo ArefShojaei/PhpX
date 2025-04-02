@@ -19,13 +19,13 @@ final class Console implements ConsoleInterface {
     }
 
     public static function log(string $message, string $label = null): string {
-        $level = "[" . ($label ? $label : Label::WARN) . "]";
-
+        $level = "[" . ($label ? $label : Label::LOG) . "]";
+        
         return self::print($level, $message);
     }
 
     public static function info(string $message, string $label = null): string {
-        $level = self::make(Color::BG_BLUE, "[" . ($label ? $label : Label::WARN) . "]");
+        $level = self::make(Color::BG_BLUE, "[" . ($label ? $label : Label::INFO) . "]");
         $message = self::make(Color::TEXT_BLUE, $message);
 
         return self::print($level, $message);
@@ -46,7 +46,7 @@ final class Console implements ConsoleInterface {
     }
 
     public static function error(string $message, string $label = null): string {
-        $level = self::make(Color::BG_RED, "[" . ($label ? $label : Label::WARN) . "]");
+        $level = self::make(Color::BG_RED, "[" . ($label ? $label : Label::ERROR) . "]");
         $message = self::make(Color::TEXT_RED, $message);
 
         return self::print($level, $message);
