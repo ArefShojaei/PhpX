@@ -9,8 +9,8 @@
         "cmd",
         "command"
     ],
-    "version": "1.6.1",
-    "type": "project",
+    "version": "1.6.2",
+    "type": "library",
     "autoload": {
         "psr-4": {
             "PhpX\\": "src/"
