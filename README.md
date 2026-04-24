@@ -1,5 +1,5 @@
-<h1 align='center'>PHP Console App</h1>
-
+# PHP Cli library
+**PhpX** is a lightweight, modern, and flexible PHP library designed to help you build CLI (Command‑Line Interface) applications effortlessly.
 ```php
 <?php
 
@@ -23,7 +23,7 @@ composer create-project arefshojaei/php-x
 
 #### Using GIT
 ```bash
-git clone https://github.com/ArefShojaei/PhpX
+git clone https://github.com/ArefShojaei/PhpX.git
 ```
 
 <br/>
