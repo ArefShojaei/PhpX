@@ -1,7 +1,9 @@
 {
     "name": "arefshojaei/php-x",
-    "description": "PHP Console application",
+    "description": "PHP CLI library",
+    "type": "library",
     "license": "MIT",
+    "version": "1.6.2",
     "keywords": [
         "php",
         "console",
@@ -9,8 +11,6 @@
         "cmd",
         "command"
     ],
-    "version": "1.6.2",
-    "type": "library",
     "autoload": {
         "psr-4": {
             "PhpX\\": "src/"
