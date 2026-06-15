@@ -13,7 +13,6 @@ final class View implements ViewInterface {
     }
 
     public function build(): string {
-       
         return $this->builder->content;
     }
 }

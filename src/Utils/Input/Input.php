@@ -2,6 +2,7 @@
 
 namespace PhpX\Utils\Input;
 
+use PhpX\Constants\ErrorMessage;
 use PhpX\Utils\Input\Contracts\InputInterface;
 
 
@@ -13,7 +14,7 @@ final class Input implements InputInterface {
 
 
     public static function set(array $args): void {
-        if (self::isEmpty()) die("Arguments already defined!");
+        if (self::isEmpty()) die(ErrorMessage::COMMAND_ARGUMENT);
         
         array_shift($args);
 

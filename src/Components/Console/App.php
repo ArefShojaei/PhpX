@@ -3,6 +3,7 @@
 namespace PhpX\Components\Console;
 
 use Closure;
+use PhpX\Constants\ErrorMessage;
 use PhpX\Components\{
     Console\Contracts\AppInterface,
     Routing\Router
@@ -36,7 +37,7 @@ final class App implements AppInterface {
 
         [$params, $action] = $this->findCommand($input);
 
-        if (!$this->isMatchedCommand($params)) die(Console::error("The command is not valid!"));
+        if (!$this->isMatchedCommand($params)) die(Console::error(ErrorMessage::INVALID_COMMAND));
 
         if (count($params) > self::COMMAND_PARAMS_COUNT) $this->addCommandParams($params);
 
