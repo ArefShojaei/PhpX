@@ -3,7 +3,7 @@
     "description": "PHP CLI library",
     "type": "library",
     "license": "MIT",
-    "version": "1.6.2",
+    "version": "1.6.4",
     "keywords": [
         "php",
         "console",
