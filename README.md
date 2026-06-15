@@ -1,8 +1,6 @@
-# PhpX - PHP CLI Framework
+# PhpX - PHP CLI Library
 
-**PhpX** یک کتابخانه خفیف، مدرن و انعطاف‌پذیر برای ساخت CLI (Command-Line Interface) با PHP است. با تمرکز بر سادگی و کارایی، PhpX شما را قادر می‌سازد کلیات پیچیده‌ای مثل Routing، Parameter Parsing، و Console Output را بدون زحمت مدیریت کنید.
-
-**PhpX** is a lightweight, modern, and flexible PHP framework for building Command-Line Interface (CLI) applications with ease. Focus on your logic while PhpX handles routing, parameter parsing, and colorful console output.
+**PhpX** is a lightweight, modern, and flexible PHP library for building Command-Line Interface (CLI) applications with ease. Focus on your logic while PhpX handles routing, parameter parsing, and colorful console output.
 
 ---
 
@@ -22,8 +20,7 @@
 
 ### Using Composer (Recommended)
 ```bash
-composer create-project arefshojaei/php-x my-cli-app
-cd my-cli-app
+composer require arefshojaei/php-x
 ```
 
 ### Using Git
@@ -307,31 +304,6 @@ php app.php user create "John" "john@example.com"
 
 ---
 
-## 🏗️ Project Structure
-
-```
-PhpX/
-├── src/
-│   ├── Components/
-│   │   ├── Console/          # Core CLI components
-│   │   │   ├── App.php
-│   │   │   ├── Command.php
-│   │   │   ├── Provider.php
-│   │   │   └── Contracts/
-│   │   └── Routing/          # Command routing
-│   │       ├── Router.php
-│   │       └── Route.php
-│   └── Utils/
-│       ├── Console/          # Console utilities (colors, labels)
-│       ├── Input/            # Input parsing
-│       └── View/             # Table builder
-├── tests/                    # Unit tests
-├── composer.json
-└── phpunit.xml
-```
-
----
-
 ## 🧪 Testing
 
 Run tests with PHPUnit:
@@ -399,12 +371,6 @@ $builder
 
 ---
 
-## 📄 License
-
-MIT License - Feel free to use PhpX in your projects!
-
----
-
 ## 👨‍💻 Author
 
 **ArefShojaei** - [GitHub](https://github.com/ArefShojaei) | [Email](mailto:arefshojaei82@gmail.com)
@@ -416,16 +382,6 @@ Contributions are welcome! Feel free to:
 - Suggest features
 - Submit pull requests
 - Improve documentation
-
----
-
-## 📦 Packagist
-
-PhpX is available on [Packagist](https://packagist.org/packages/arefshojaei/php-x)
-
-```bash
-composer require arefshojaei/php-x
-```
 
 ---
 
